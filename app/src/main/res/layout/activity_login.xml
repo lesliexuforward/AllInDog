@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/pander"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".Login">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="宠物爱情"
+        android:id="@+id/Title"
+        android:textColor="#de0de9"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="69dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="密码："
+        android:textSize="20sp"
+        android:id="@+id/passWord"
+        android:layout_marginTop="160dp"
+        android:textStyle="bold"
+        android:layout_below="@+id/Title"
+        android:layout_toStartOf="@+id/editPass" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="用户名："
+        android:textSize="20sp"
+        android:id="@+id/userName"
+        android:textStyle="bold"
+        android:layout_above="@+id/editPass"
+        android:layout_alignEnd="@+id/passWord"
+        android:layout_marginBottom="40dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/editUser"
+        android:autoText="false"
+        android:text="请输入"
+        android:layout_alignTop="@+id/userName"
+        android:layout_alignStart="@+id/Title" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:ems="10"
+        android:id="@+id/editPass"
+        android:layout_alignTop="@+id/passWord"
+        android:layout_alignStart="@+id/editUser" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/Title"
+        android:layout_alignEnd="@+id/editUser"
+        android:layout_marginTop="30dp"
+        android:id="@+id/linearLayout">
+
+    </LinearLayout>
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="登录"
+        android:id="@+id/login"
+        android:layout_gravity="center_vertical"
+        android:layout_below="@+id/editPass"
+        android:layout_alignEnd="@+id/Title" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="注册"
+        android:id="@+id/create"
+        android:layout_below="@+id/editPass"
+        android:layout_toEndOf="@+id/login"
+        android:layout_marginStart="36dp" />
+
+</RelativeLayout>
