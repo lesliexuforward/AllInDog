@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">AllInDog</string>
+    <string name="login_string">登录</string>
+    <string name="register_string">don\'t have a account?Click here</string>
 </resources>

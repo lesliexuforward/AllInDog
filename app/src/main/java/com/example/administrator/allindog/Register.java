@@ -1,6 +1,5 @@
 package com.example.administrator.allindog;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
@@ -10,7 +9,8 @@ import android.support.v7.app.AppCompatActivity;
 public class Register extends AppCompatActivity{
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.register);
+        setContentView(R.layout.activity_register);
+        //还需进行界面设计，将注册的信息传入到数据库中
 
     }
 }
