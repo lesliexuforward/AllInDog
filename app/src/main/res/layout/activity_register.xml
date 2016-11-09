@@ -1,41 +1,158 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/photo_register">
+    >
+
 
     <TextView
+        android:id="@+id/login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="30dp"
+        android:gravity="center_horizontal"
+        android:textColor="#8a2be2"
+        android:textSize="35dp"
+        android:text="@string/register_panel" />
+    <TextView
+        android:id="@+id/txtname"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="欢迎加入宠物爱情！"
-        android:id="@+id/textView"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="20dp"
-        android:textColor="@android:color/holo_orange_dark" />
+        android:layout_below="@id/login"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="30dp"
+        android:textSize="28dp"
+        android:text="@string/register_user"/>
+    <EditText
+        android:id="@+id/edname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:layout_below="@id/login"
+        android:layout_alignParentRight="true"
+        android:hint="必填"
+        android:layout_toEndOf="@+id/txtpassword" />
+    <TextView
+        android:id="@+id/txtpassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtname"
+        android:layout_marginRight="5dp"
+        android:textSize="28dp"
+        android:text="用户密码:"/>
+    <EditText
+        android:id="@+id/edpassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/edname"
+        android:layout_toRightOf="@id/txtpassword"
+        android:layout_alignParentRight="true"
+        android:inputType="textPassword"
+        android:hint="必填"/>
 
-    <TableLayout
+    <TextView
+        android:id="@+id/txtsex"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="5dp"
+        android:textSize="28dp"
+        android:text="用户性别:"
+        android:layout_centerVertical="true"
+        android:layout_toStartOf="@+id/edpassword" />
+
+    <TextView
+        android:id="@+id/txtphone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="5dp"
+        android:textSize="28dp"
+        android:text="电话:"
+        android:layout_marginTop="42dp"
+        android:layout_below="@+id/txtsex"
+        android:layout_alignEnd="@+id/txtsex" />
+
+    <EditText
+        android:id="@+id/edphone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="必填"
+        android:layout_alignTop="@+id/txtphone"
+        android:layout_alignEnd="@+id/login"
+        android:layout_toEndOf="@+id/txtsex" />
+
+    <TextView
+        android:id="@+id/txtbir"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="5dp"
+        android:textSize="28dp"
+        android:text="生日:"
+        android:layout_below="@+id/edphone"
+        android:layout_alignEnd="@+id/txtsex" />
+
+    <EditText
+        android:id="@+id/edbir"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="必填"
+        android:layout_below="@+id/edphone"
+        android:layout_alignStart="@+id/edphone"
+        android:layout_alignEnd="@+id/edphone"
+        android:inputType="date" />
+
+    <TextView
+        android:id="@+id/txtnote"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="5dp"
+        android:textSize="28dp"
+        android:text="签名:"
+        android:layout_below="@+id/edbir"
+        android:layout_alignStart="@+id/txtbir" />
+
+    <EditText
+        android:id="@+id/ednote"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="必填"
+        android:layout_below="@+id/edbir"
+        android:layout_alignStart="@+id/edbir"
+        android:layout_alignEnd="@+id/edbir" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="提交"
+        android:id="@+id/postdata"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
+    <RadioGroup
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="15dp">
+        android:orientation="horizontal"
+        android:layout_alignTop="@+id/txtsex"
+        android:layout_alignStart="@+id/postdata"
+        android:id="@+id/radioGroup">
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="男"
+            android:id="@+id/boy"
+            android:layout_alignTop="@+id/txtsex"
+            android:layout_toEndOf="@+id/txtsex" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="您的姓名："
-                android:id="@+id/textView3" />
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="女"
+            android:id="@+id/girl"
+            android:layout_alignBottom="@+id/txtsex"
+            android:layout_toEndOf="@+id/postdata"
+            android:layout_gravity="center_horizontal" />
 
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/editText"
-                android:layout_span="250" />
-        </TableRow>
-    </TableLayout>
+    </RadioGroup>
 
-</LinearLayout>
+</RelativeLayout>
+
