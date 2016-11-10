@@ -90,7 +90,7 @@
         android:layout_below="@+id/edphone"
         android:layout_alignEnd="@+id/txtsex" />
 
-    <EditText
+    <!--EditText
         android:id="@+id/edbir"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -98,7 +98,7 @@
         android:layout_below="@+id/edphone"
         android:layout_alignStart="@+id/edphone"
         android:layout_alignEnd="@+id/edphone"
-        android:inputType="date" />
+        android:inputType="date" /-->
 
     <TextView
         android:id="@+id/txtnote"
@@ -107,7 +107,7 @@
         android:layout_marginRight="5dp"
         android:textSize="28dp"
         android:text="签名:"
-        android:layout_below="@+id/edbir"
+        android:layout_alignBottom="@+id/ednote"
         android:layout_alignStart="@+id/txtbir" />
 
     <EditText
@@ -115,9 +115,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:hint="必填"
-        android:layout_below="@+id/edbir"
-        android:layout_alignStart="@+id/edbir"
-        android:layout_alignEnd="@+id/edbir" />
+        android:layout_below="@+id/txtbir"
+        android:layout_alignStart="@+id/edphone"
+        android:layout_alignEnd="@+id/login" />
 
     <Button
         android:layout_width="wrap_content"
@@ -153,6 +153,19 @@
             android:layout_gravity="center_horizontal" />
 
     </RadioGroup>
+
+    <com.example.administrator.allindog.util.EditTextWithDate
+        android:id="@+id/limitedDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="8dp"
+        android:hint="请点击右侧日历选择"
+
+
+        android:layout_gravity="center_vertical"
+        android:layout_alignTop="@+id/txtbir"
+        android:layout_alignEnd="@+id/ednote"
+        android:layout_alignStart="@+id/ednote" />
 
 </RelativeLayout>
 

@@ -1,5 +1,6 @@
 package com.example.administrator.allindog.db;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -37,5 +38,23 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 
+    }
+
+
+    //插入用户数据
+    public long insertUser(User user){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put("username", user.getUsername());
+        values.put("userpassword", user.getPassword());
+        values.put("usersex", user.getSex());
+        values.put("phonenumber", user.getPhone());
+        values.put("birthday",user.getBirthday());
+        values.put("personaldesc",user.getDescription());
+        //插入注册日期
+        values.put("regitime",user.getRegisterTime());
+        long returnInt=db.insert("users",null,values);
+        db.close();
+        return returnInt;
     }
 }
